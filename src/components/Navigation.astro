@@ -1,0 +1,6 @@
+---
+const currentPage = Astro.props.currentPage;
+---
+<a class={`nav-item ${currentPage === 'Home' ? 'nav-item-active' : ''}`} href="">Home</a>
+<a class={`nav-item ${currentPage === 'About' ? 'nav-item-active' : ''}`} href="about">About</a>
+<a class={`nav-item ${currentPage === 'Blog' ? 'nav-item-active' : ''}`} href="blog">Blog</a>

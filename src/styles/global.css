@@ -1,24 +1,32 @@
 @import 'tailwindcss';
 
+:root {
+  --font-sans: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html {
-    background-color: lightslategray;
-    font-family: 'Courier New', Courier, monospace;
+  background-color: lightslategray;
 }
 
 body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80ch;
-    padding: 1rem;
-    line-height: 1.5;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80ch;
+  padding: 1rem;
+  line-height: 1.5;
+  font-family: var(--font-sans);
 }
 
 .nav-item {
-    @apply px-1.5 py-0.5 bg-blue-200 rounded hover:bg-blue-300 hover:px-2.5 transition-all duration-300 ease-in-out;
+    @apply px-2.5 py-1.5 bg-blue-200 rounded hover:bg-blue-300 transition-all duration-300 ease-in-out;
 }
 
 .nav-item-active {
-    @apply px-1.5 py-0.5 rounded bg-blue-300 hover:px-2.5 transition-all duration-300 ease-in-out;
+    @apply py-1.5 rounded bg-blue-300 px-2.5 transition-all duration-300 ease-in-out;
 }
 
 * {
@@ -26,6 +34,6 @@ body {
 }
 
 h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
+  margin: 1rem 0;
+  font-size: 2.5rem;
 }

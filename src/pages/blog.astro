@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 const pageTitle = 'Blog';
 ---
@@ -14,9 +16,7 @@ const pageTitle = 'Blog';
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<a class="nav-item" href="">Home</a>
-		<a class="nav-item" href="about">About</a>
-        <a class="nav-item-active" href="blog">{pageTitle}</a>
+		<Navigation currentPage={pageTitle} />
 
 		<h1>{pageTitle}</h1>
 		<h2>Hello user. This is the blog page located at /blog.</h2>
@@ -35,4 +35,5 @@ const pageTitle = 'Blog';
             <li><a href="posts/post-4" class="text-blue-300 hover:underline transition-colors duration-300">Post 4</a></li>
         </ul>
 	</body>
+	<Footer />
 </html>
