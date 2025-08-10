@@ -1,5 +1,18 @@
 ---
+import '../styles/global.css';
 
+const pageTitle = 'About';
+const identity = {
+    name: 'acemavrick',
+    email: 'hahanothere@thisisonlyaplayground.sorry',
+    country: 'antarctica',
+    occupation: 'cs person',
+    hobbies: ['coding', 'reading', 'writing', 'gaming', 'sleeping', 'photography'],
+};
+
+const skills = ['html', 'css', 'astro', 'swift', 'writing'];
+
+const skillColor = "lightblue";
 ---
 
 <html lang="en">
@@ -9,17 +22,34 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<base href={import.meta.env.BASE_URL + "/"} />
-		<title>About</title>
+		<title>{pageTitle}</title>
+        <style define:vars={{ skillColor }}>
+            .skill {
+                color: var(--skillColor);
+            }
+        </style>
 	</head>
 	<body>
-        <a href="">Home</a>
-        <a href="about">About (you are here)</a>
-        <a href="blog">Blog</a>
+        <a class="nav-item" href="">Home</a>
+        <a class="nav-item-active" href="about">{pageTitle}</a>
+        <a class="nav-item" href="blog">Blog</a>
 
-		<h1>ABOUT</h1>
+		<h1>{pageTitle}</h1>
 		<h2>Hello user. This is the about page located at /about.</h2>
         <h3>To go home, remove <code>/about</code> off the end of the url
         in the address bar.</h3>
         <p>I am working through Astro's introductory tutorial.</p>
+
+        <h2>Who I Am</h2>
+        <p>My name is {identity.name}. I am from {identity.country}.</p>
+        <p>I am a {identity.occupation}.</p>
+        {identity.hobbies.length > 0 && 
+            <p>Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]}.</p>
+        }
+
+        <p> My skills include: </p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
 	</body>
 </html>
