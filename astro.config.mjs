@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://acemavrick.github.io',
+    site: 'https://acemavrick.github.io/astro-tutorial',
     base: '/astro-tutorial'
 });
